@@ -1,0 +1,166 @@
+﻿<html>
+<head>
+    <title>Implements Function Highest Score</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10"></script>
+    <style>
+        pre {
+            border: unset !important;
+            background-color: unset !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="highest-score">
+        <div class="col-md-12" style="padding-bottom: 1em">
+            <label>Input: </label>
+            <input v-on:input="bestWord = ''" v-model="str" @input="lower($event)"/>
+            <button type="submit" v-on:click="calHighestScore(str)">Submit</button>
+        </div>
+        
+        <div v-if="bestWord">
+            <div class="col-md-12">
+                <div>ผลลัพธ์</div>
+            </div>
+            <div class="col-md-12">
+                <pre>"{{ str }}" ==> "{{ bestWord }}"</pre>
+            </div>
+        </div>
+        <div v-if="errorMessage" class="col-md-12">
+            <span style="color: red"> {{ errorMessage }} </span>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#highest-score',
+            data: {
+                str: null,
+                bestWord: '',
+                bestScore: 0,
+                errorMessage: null,
+            },
+            methods: {
+                wordScore(word) {
+                    let score = 0;
+                    for (let j = 0; j < word.length; j++) {
+                        let char = word[j];
+                        switch (char) {
+                            case 'a':
+                                score += 1;
+                                break;
+                            case 'b':
+                                score += 2;
+                                break;
+                            case 'c':
+                                score += 3;
+                                break;
+                            case 'd':
+                                score += 4;
+                                break;
+                            case 'e':
+                                score += 5;
+                                break;
+                            case 'f':
+                                score += 6;
+                                break;
+                            case 'g':
+                                score += 7;
+                                break;
+                            case 'h':
+                                score += 8;
+                                break;
+                            case 'i':
+                                score += 9;
+                                break;
+                            case 'j':
+                                score += 10;
+                                break;
+                            case 'k':
+                                score += 11;
+                                break;
+                            case 'l':
+                                score += 12;
+                                break;
+                            case 'm':
+                                score += 13;
+                                break;
+                            case 'n':
+                                score += 14;
+                                break;
+                            case 'o':
+                                score += 15;
+                                break;
+                            case 'p':
+                                score += 16;
+                                break;
+                            case 'q':
+                                score += 17;
+                                break;
+                            case 'r':
+                                score += 18;
+                                break;
+                            case 's':
+                                score += 19;
+                                break;
+                            case 't':
+                                score += 20;
+                                break;
+                            case 'u':
+                                score += 21;
+                                break;
+                            case 'v':
+                                score += 22;
+                                break;
+                            case 'w':
+                                score += 23;
+                                break;
+                            case 'x':
+                                score += 24;
+                                break;
+                            case 'y':
+                                score += 25;
+                                break;
+                            case 'z':
+                                score += 26;
+                                break;
+                            default:
+                                score += 0;
+                                break;
+                        }
+                    }
+                    return score;
+                },
+                calHighestScore(data) {
+                    this.errorMessage = null;
+                    this.bestWord = '';
+                    this.bestScore = 0;
+                    if (data) {
+                        var words = data.split(" ");
+                        for (let i = 0; i < words.length; i++) {
+                            let word = words[i];
+                            let score = this.wordScore(word);
+                            if (score > this.bestScore) {
+                                this.bestScore = score;
+                                this.bestWord = word;
+                            }
+                        }
+                    } else {
+                        this.errorMessage = 'กรุณากรอกข้อมูล';
+                    }
+                },
+                lower(e) {
+                    this.str = e.target.value.toLowerCase();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

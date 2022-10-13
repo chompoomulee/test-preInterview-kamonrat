@@ -1,0 +1,74 @@
+﻿<html>
+<head>
+    <title>Implements Function Reverse</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10"></script>
+    <style>
+        pre {
+            border: unset !important;
+            background-color: unset !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="reverse">
+        <div class="col-md-12" style="padding-bottom: 1em">
+            <label>Input: </label>
+            <input v-on:input="result = ''" v-model="str" />
+            <button type="submit" v-on:click="reverseStr(str)">Submit</button>
+        </div>
+        
+        <div v-if="result">
+            <div class="col-md-12">
+                <div>ผลลัพธ์</div>
+            </div>
+            <div class="col-md-12">
+                <pre>"{{ str }}" ==> "{{ result }}"</pre>
+            </div>
+        </div>
+        <div v-if="errorMessage" class="col-md-12">
+            <span style="color: red"> {{ errorMessage }} </span>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#reverse',
+            data: {
+                str: null,
+                result: '',
+                errorMessage: null
+            },
+            methods: {
+                reverseStr(data) {
+                    this.errorMessage = null;
+                    this.result = '';
+                    if (data) {
+                        var strSplit = [];
+
+                        strSplit = data.split(' ');
+
+                        for (var index = 0; index < strSplit.length; index++) {
+                            rev = [];
+                            for (let i = strSplit[index].length - 1, j = 0; i >= 0; i--, j++) {
+                                rev[j] = strSplit[index][i];
+                            }
+                            rev.push(" ");
+                            this.result += rev.join('');
+                        }
+                    } else {
+                        this.errorMessage = 'กรุณากรอกข้อมูล';
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

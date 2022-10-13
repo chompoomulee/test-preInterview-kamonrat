@@ -1,0 +1,100 @@
+﻿<html>
+<head>
+    <title>Implements Function SquareDigits</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10"></script>
+</head>
+<body>
+    <div id="square-digits">
+        <div class="col-md-12">
+            <label>Input: </label>
+            <input v-model="number" />
+            <button type="submit" v-on:click="calSquareDigits(number)">Submit</button>
+        </div>
+        <div v-if="result">
+            <div class="col-md-12">
+                <p>ผลลัพธ์</p>
+            </div>
+            <div class="col-md-12">
+                <div>SquareDigits({{ number }}) // จะได้ {{ result }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-1" style="padding-right: 0">
+                        {{ result }} =>
+                    </div>
+                    <div class=" col-auto">
+                        <template v-for="digit in digits">
+                            ({{ digit }}^2) &nbsp;
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-1" style="padding-right: 0"></div>
+                    <div class=" col-auto">
+                        <template v-for="squareDigit in squareDigits">
+                            ({{ squareDigit }}) &nbsp; &nbsp; &nbsp;
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-1" style="padding-right: 0"></div>
+                    <div class=" col-auto">
+                        {{ result }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="errorMessage" class="col-md-12">
+            <span style="color: red"> {{ errorMessage }} </span>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#square-digits',
+            data: {
+                number: null,
+                digits: [],
+                squareDigits: [],
+                result: null,
+                errorMessage: null
+            },
+            methods: {
+                calSquareDigits(n) {
+                    this.errorMessage = null;
+                    if (n) {
+                        n = n.toString().match(/-?\d/g);
+
+                        this.digits = [];
+                        this.squareDigits = [];
+                        for (var i = 0; i < n.length; i++) {
+                            this.digits.push(parseInt(n[i]));
+                        }
+
+                        for (var i = 0; i < this.digits.length; i++) {
+                            this.squareDigits.push(this.digits[i] * this.digits[i]);
+                        }
+
+                        this.result = this.squareDigits.toString().replace(/\,/g, '');
+                    } else {
+                        this.result = null;
+                        this.errorMessage = 'กรุณากรอกข้อมูล';
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
