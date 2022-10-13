@@ -1,0 +1,15 @@
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\bin\Debug\net6.0\Test-PreInterview-1.exe
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\bin\Debug\net6.0\Test-PreInterview-1.deps.json
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\bin\Debug\net6.0\Test-PreInterview-1.runtimeconfig.json
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\bin\Debug\net6.0\Test-PreInterview-1.dll
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\bin\Debug\net6.0\Test-PreInterview-1.pdb
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.csproj.AssemblyReference.cache
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.AssemblyInfoInputs.cache
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.AssemblyInfo.cs
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.csproj.CoreCompileInputs.cache
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.dll
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\refint\Test-PreInterview-1.dll
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.pdb
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\Test-PreInterview-1.genruntimeconfig.cache
+C:\Users\Chani\source\repos\Test-PreInterview-1\Test-PreInterview-1\obj\Debug\net6.0\ref\Test-PreInterview-1.dll
